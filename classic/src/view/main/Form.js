@@ -4,8 +4,11 @@ Ext.define('MyApp.view.main.Form', {
     requires: [
         'Ext.form.Panel'
     ],
-    store: {
-        type: 'form'
+    // store: {
+    //     type: 'form'
+    // },
+    bind: {
+        title: '{title}'
     },
     bodyPadding: 10,
     modal: true,
@@ -15,15 +18,20 @@ Ext.define('MyApp.view.main.Form', {
     items: [{ // Let's put an empty grid in just to illustrate fit layout
         xtype: 'form',
         defaultType: 'textfield',
+        reference: 'form',
         items: [{
             fieldLabel: 'Category Name',
             emptyText: 'Enter Category  Name',
             name: 'cat_name',
-            width: '100%'
+            width: '100%',
+            reference: 'cat_name',
+            bind: '{theCustomer.cat_name}'
         }, {
             xtype: 'fieldcontainer',
             fieldLabel: 'Status',
             defaultType: 'radiofield',
+            bind: '{theCustomer.cat_status}',
+            reference: 'cat_status',
             defaults: {
                 margin: '0 70 0 0'
             },

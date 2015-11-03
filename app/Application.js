@@ -5,20 +5,18 @@
  */
 Ext.define('MyApp.Application', {
     extend: 'Ext.app.Application',
-    
     name: 'MyApp',
 
     stores: [
         // TODO: add global / shared stores here
     ],
-    
-    launch: function () {
+
+    launch: function() {
         // TODO - Launch the application
     },
-
-    onAppUpdate: function () {
+    onAppUpdate: function() {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
+            function(choice) {
                 if (choice === 'yes') {
                     window.location.reload();
                 }

@@ -26,10 +26,10 @@ Ext.define('MyApp.view.main.Group', {
         text: 'Status',
         dataIndex: 'cat_status',
         flex: 1,
-        renderer: function(dataIndex){
-            if(dataIndex === '1'){
+        renderer: function(dataIndex) {
+            if (dataIndex === '1') {
                 return 'New';
-            }else{
+            } else {
                 return 'Old';
             }
         }

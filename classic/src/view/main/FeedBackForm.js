@@ -29,6 +29,9 @@ Ext.define('MyApp.view.main.FeedBackForm', {
             items: [{
                 name: 'firstName',
                 emptyText: 'First Name'
+                    // add custom valid...
+                    // vtype: 'customPass',
+                    // msgTarget: 'side'
             }, {
                 name: 'lastName',
                 margin: '0 0 0 5',

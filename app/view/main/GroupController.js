@@ -1,4 +1,5 @@
 Ext.define('MyApp.view.main.GroupController', {
+
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.group',
@@ -13,16 +14,19 @@ Ext.define('MyApp.view.main.GroupController', {
     },
 
     onSave: function(btn) {
-
+        //var store = this.getViewModel().data;
+        //console.log(store);
+        // var dialog = this.dialog;
+        // console.log(dialog);
+        // form = this.lookupReference('form');
+        // console.log(form);
         var win = btn.up('window');
         form = win.down('form');
         var rec = form.getForm().getValues();
-        // var myStore = Ext.create('MyApp.store.Group');
-        // myStore.add(rec);
-        console.log(rec);
         var store = Ext.create('MyApp.view.main.GroupViewModel');
         var allStore = store.getStore('allgroup');
         allStore.add(rec);
+
         btn.up('window').close();
     },
 
