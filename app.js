@@ -15,6 +15,11 @@ Ext.application({
     // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
     // modern toolkit, the main view will be added to the Viewport.
     //
+    launch: function() {
+        // TODO - Launch the application
+        Ext.tip.QuickTipManager.init();
+    },
+    enableQuickTips: true,
     mainView: 'MyApp.view.main.Main'
 
     //-------------------------------------------------------------------------

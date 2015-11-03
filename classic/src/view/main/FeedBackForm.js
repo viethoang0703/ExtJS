@@ -3,6 +3,7 @@ Ext.define('MyApp.view.main.FeedBackForm', {
     requires: [
         'Ext.form.Panel'
     ],
+    controller: 'group',
     margin: 20,
     width: 600,
     scrollable: true,
@@ -29,13 +30,19 @@ Ext.define('MyApp.view.main.FeedBackForm', {
             items: [{
                 name: 'firstName',
                 emptyText: 'First Name'
-                    // add custom valid...
+                    // Test add custom valid...
                     // vtype: 'customPass',
                     // msgTarget: 'side'
             }, {
                 name: 'lastName',
                 margin: '0 0 0 5',
                 emptyText: 'Last Name'
+                    //Test CapsLock On
+                    // id: 'password',
+                    // enableKeyEvents: true,
+                    // listeners: {
+                    //     keypress: 'onTextFieldKeyPress'
+                    // }
             }]
         }, {
             xtype: 'datefield',

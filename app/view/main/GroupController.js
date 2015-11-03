@@ -1,7 +1,10 @@
 Ext.define('MyApp.view.main.GroupController', {
 
     extend: 'Ext.app.ViewController',
-
+    requires: [
+        'MyApp.view.main.CapsLockTooltip'
+        //'MyApp.util.Util'
+    ],
     alias: 'controller.group',
 
     onAdd: function(btn) {
@@ -53,5 +56,21 @@ Ext.define('MyApp.view.main.GroupController', {
 
     onAddFeedBack: function(btn) {
         Ext.create('MyApp.view.main.FeedBackForm').show();
+    },
+
+    onTextFieldKeyPress: function(field, e, options) {
+        var charCode = e.getCharCode(),
+            me = this;
+        if ((e.shiftKey && charCode >= 97 && charCode <= 122) || //#2
+            (!e.shiftKey && charCode >= 65 && charCode <= 90)) {
+            if (me.capslockTooltip === undefined) { //#3
+                me.capslockTooltip = Ext.widget('capslocktooltip'); //#4
+            }
+            me.capslockTooltip.show(); //#5
+        } else {
+            if (me.capslockTooltip !== undefined) { //#6
+                me.capslockTooltip.hide(); //#7
+            }
+        }
     }
 });
